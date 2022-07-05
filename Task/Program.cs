@@ -6,10 +6,10 @@ Console.Write("Введите количество элементов в мас�
 int len = Convert.ToInt32(Console.ReadLine());
 string[] inputstring = CreateArray(len);
 FillArray(inputstring);
-PrintArray(inputstring);
-Console.WriteLine();
-string[] outstring = MainExample(inputstring);
-PrintArray(outstring);
+Console.WriteLine($"исходный массив: {PrintArray(inputstring)}");
+string[] outputstring = MainExample(inputstring);
+Console.WriteLine($"массив из строк, длина которых меньше либо равна 3 символам: {PrintArray(outputstring)}");
+
 
 string[] CreateArray(int count)
 {
@@ -19,22 +19,22 @@ string[] CreateArray(int count)
 void FillArray(string[] inputArray)
 {
     int len = inputArray.Length;
-    Console.WriteLine($"Введите {len} элементов массива");
+    Console.WriteLine($"Введите {len} элементов массива:");
     for (int i = 0; i < len; i++)
     {
         inputArray[i] = Console.ReadLine();
     }
 }
 
-void PrintArray(string[] array)
+string PrintArray(string[] array)
 {
-    
+    string txt = String.Empty;
     int len = array.Length;
     for (int i = 0; i < len; i++)
     {
-        Console.WriteLine($"{array[i]}");
+        txt += $"{array[i]} ";
     }
-
+    return $"[{txt}]";
 }
 
 string[] MainExample(string[] inputArray)
