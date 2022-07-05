@@ -6,6 +6,7 @@ Console.Write("Введите количество элементов в мас�
 int len = Convert.ToInt32(Console.ReadLine());
 string[] newarray = CreateArray(len);
 FillArray(newarray);
+PrintArray(newarray);
 
 
 string[] CreateArray(int count)
@@ -23,3 +24,12 @@ void FillArray(string[] inputArray)
     }
 }
 
+void PrintArray(string[] array)
+{
+  
+    for (int i = 0; i < len; i++)
+    {
+        Console.Write($"{array[i]}  ");
+    }
+    
+}
