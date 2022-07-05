@@ -4,12 +4,12 @@
 
 Console.Write("Введите количество элементов в массиве: ");
 int len = Convert.ToInt32(Console.ReadLine());
-string[] inputarray = CreateArray(len);
-FillArray(inputarray);
-PrintArray(inputarray);
-string[] outputarray = MainExample(inputarray);
-Console.WriteLine(" ");
-PrintArray(outputarray);
+string[] inputstring = CreateArray(len);
+FillArray(inputstring);
+PrintArray(inputstring);
+Console.WriteLine();
+string[] outstring = MainExample(inputstring);
+PrintArray(outstring);
 
 string[] CreateArray(int count)
 {
@@ -28,10 +28,13 @@ void FillArray(string[] inputArray)
 
 void PrintArray(string[] array)
 {
+    
+    int len = array.Length;
     for (int i = 0; i < len; i++)
     {
-        Console.Write($"{array[i]}  ");
+        Console.WriteLine($"{array[i]}");
     }
+
 }
 
 string[] MainExample(string[] inputArray)
@@ -43,9 +46,9 @@ string[] MainExample(string[] inputArray)
     {
         if (inputArray[i].Length <= 3)
         {
-            index += 1;
+            index++;
         }
-        i += 1;
+        i++;
     }
     string[] outputArray = new string[index];
     count = inputArray.Length;
